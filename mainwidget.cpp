@@ -67,7 +67,7 @@ MainWidget::MainWidget(QWidget *parent) :
 //    pitch(0),
 //    iniX(0)
 {
-    filein.open("d:/sample.txt", ios::in);
+    filein.open("C:\\Users\\yipai.du\\Documents\\Intelligent-Glove\\sensor_fusion\\output1.txt", ios::in);
 
     if (!filein.is_open()){
         cout << "open File Failed." << endl;
@@ -222,7 +222,7 @@ void MainWidget::initializeGL()
     geometries = new GeometryEngine;
 
     // Use QBasicTimer because its faster than QTimer
-    timer.start(12, this);
+    timer.start(30, this);
 }
 
 //! [3]

@@ -6,9 +6,9 @@ using namespace std;
 ValueWidget::ValueWidget(QWidget *parent)
     : QFrame(parent)
 {
-    timer.start(50, this);
+    timer.start(200, this);
 
-    filein.open("d:/sample.txt", ios::in);
+    filein.open("C:\\Users\\yipai.du\\Documents\\Intelligent-Glove\\sensor_fusion\\output1.txt", ios::in);
 
     if (!filein.is_open()){
         cout << "open File Failed." << endl;
@@ -37,12 +37,11 @@ void ValueWidget::paintEvent(QPaintEvent* event)
     for (int i=0; i<6; i++) lineHandler >> mode;
     painter.drawText(0 ,  16, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Current State: "+QString::fromStdString(mode));
     lineHandler >> mode;
-    painter.drawText(300, 16, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Air pressure(Pa): "+QString::fromStdString(mode));
+    painter.drawText(300, 100, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Air pressure(Pa): "+QString::fromStdString(mode));
     lineHandler >> mode;
-    painter.drawText(300, 32, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Humidity(%): "+QString::fromStdString(mode));
+    painter.drawText(300, 120, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Humidity(%): "+QString::fromStdString(mode));
     lineHandler >> mode;
-    painter.drawText(300, 48, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Temperature(C): "+QString::fromStdString(mode));
-    font.setPixelSize(20);
+    painter.drawText(300, 140, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Temperature(C): "+QString::fromStdString(mode));
     painter.drawText(0, 40, width(), height(), Qt::AlignLeft | Qt::AlignTop, glo_hint);
 }
 
