@@ -25,7 +25,7 @@ void ValueWidget::paintEvent(QPaintEvent* event)
 {
 
     QPainter painter(this);
-    QFont font("Times", 10, QFont::Light, 0);
+    QFont font("Times", 6, QFont::Light, 0);
 
     painter.setPen(QColor(0x00, 0, 0));
     painter.setFont(font);
@@ -34,14 +34,18 @@ void ValueWidget::paintEvent(QPaintEvent* event)
     stringstream lineHandler;
     string mode;
     lineHandler << oneline;
-    for (int i=0; i<6; i++) lineHandler >> mode;
+    for (int i=0; i<7; i++) lineHandler >> mode;
     painter.drawText(0 ,  16, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Current State: "+QString::fromStdString(mode));
     lineHandler >> mode;
-    painter.drawText(300, 100, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Air pressure(Pa): "+QString::fromStdString(mode));
+    painter.drawText(340, 160, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Air pressure(Pa):");
+    painter.drawText(380, 180, width(), height(), Qt::AlignLeft | Qt::AlignTop, QString::fromStdString(mode));
     lineHandler >> mode;
-    painter.drawText(300, 120, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Humidity(%): "+QString::fromStdString(mode));
+    painter.drawText(340, 200, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Humidity(%):\n");
+    painter.drawText(380, 220, width(), height(), Qt::AlignLeft | Qt::AlignTop, QString::fromStdString(mode));
     lineHandler >> mode;
-    painter.drawText(300, 140, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Temperature(C): "+QString::fromStdString(mode));
+    painter.drawText(340, 240, width(), height(), Qt::AlignLeft | Qt::AlignTop, "Temperature(C):\n");
+    painter.drawText(380, 260, width(), height(), Qt::AlignLeft | Qt::AlignTop, QString::fromStdString(mode));
+    font.setPixelSize(20);
     painter.drawText(0, 40, width(), height(), Qt::AlignLeft | Qt::AlignTop, glo_hint);
 }
 
