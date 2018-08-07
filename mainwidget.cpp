@@ -222,7 +222,7 @@ void MainWidget::initializeGL()
     geometries = new GeometryEngine;
 
     // Use QBasicTimer because its faster than QTimer
-    timer.start(12, this);
+    timer.start(40, this);
 }
 
 //! [3]
