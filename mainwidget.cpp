@@ -129,7 +129,7 @@ void MainWidget::timerEvent(QTimerEvent *)
     stringstream lineHandler;
     string mode;
     getline(filein, oneline);
-    cout << oneline << endl;
+//    cout << oneline << endl;
     lineHandler << oneline;
     lineHandler >> mode;
 //    cout << mode << " " << mode.compare("roll:") << endl;

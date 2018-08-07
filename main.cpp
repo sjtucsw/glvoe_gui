@@ -11,6 +11,8 @@
 #include <fstream>
 #include <sstream>
 
+#include "valuewidget.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])

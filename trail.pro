@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,12 +28,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     mainwidget.cpp \
-    geometryengine.cpp
+    geometryengine.cpp \
+    valuewidget.cpp
 
 HEADERS += \
         mainwindow.h \
     geometryengine.h \
-    mainwidget.h
+    mainwidget.h \
+    valuewidget.h
 
 FORMS += \
         mainwindow.ui
