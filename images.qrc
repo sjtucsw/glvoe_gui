@@ -5,5 +5,6 @@
         <file>sample.txt</file>
         <file>cube.png</file>
         <file>output.txt</file>
+        <file>assemble.jpg</file>
     </qresource>
 </RCC>
