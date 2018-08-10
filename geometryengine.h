@@ -48,6 +48,10 @@
 **
 ****************************************************************************/
 
+/**
+  Header of Gromertyengine Class.
+**/
+
 #ifndef GEOMETRYENGINE_H
 #define GEOMETRYENGINE_H
 

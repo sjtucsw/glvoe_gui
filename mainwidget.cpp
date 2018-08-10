@@ -46,6 +46,8 @@
 **
 ** $QT_END_LICENSE$
 **
+** Updated by Siwei at 8.8.2018.
+**
 ****************************************************************************/
 
 #include "mainwidget.h"
@@ -117,11 +119,6 @@ void MainWidget::mouseReleaseEvent(QMouseEvent *e)
 //! [1]
 void MainWidget::timerEvent(QTimerEvent *)
 {
-//    int dx=2,dy=1,dz=0;
-//    QVector3D n = QVector3D(dx, dy, dz).normalized();
-//    qreal speed = 3;
-//    rotation = QQuaternion::fromAxisAndAngle(n, speed) * rotation;
-//    update();
 
     filein.clear();
     filein.seekg(0,ios::beg);
@@ -144,61 +141,10 @@ void MainWidget::timerEvent(QTimerEvent *)
         x_f=x_f*180/3.14;
         y_f=y_f*180/3.14;
         z_f=z_f*180/3.14;
-//        if (roll!=0 || pitch!=0 || yaw!=0) {
-//            x_f=x_f-roll;
-//            y_f=y_f-pitch;
-//            z_f=z_f-yaw;
-            rotation=QQuaternion::fromEulerAngles(x_f,y_f,z_f);
-            cout << x_f << " " << y_f << rotation.x() << " " << rotation.y() << endl;
-            update();
-//        } else {
-//            roll=x_f;
-//            pitch=y_f;
-//            yaw=z_f;
-//        }
+        rotation=QQuaternion::fromEulerAngles(x_f,y_f,z_f);
+        cout << x_f << " " << y_f << rotation.x() << " " << rotation.y() << endl;
+        update();
       }
-
-//        int x,y,z;
-//        x=x_f*1000;
-//        y=y_f*1000;
-//        z=z_f*1000;
-//        cout << x << " " << y << " " << z << " " << roll << " " << pitch << " " << yaw << endl;
-//        if (x!=0 || y!=0 || z!=0) {
-//            if (roll!=0 || pitch!=0 || yaw!=0) {
-//                int dx,dy,dz;
-//                dx=x-roll;
-//                roll=x;
-//                dy=y-pitch;
-//                pitch=y;
-//                dz=z-yaw;
-//                yaw=z;
-//                QVector3D n = QVector3D(dx, dy, dz).normalized();
-//                qreal speed = (1.0*dx*dx+dy*dy+dz*dz)/1000000;
-//                rotation = QQuaternion::fromAxisAndAngle(n, speed) * rotation;
-//                cout << speed << " " << n.x() << " " << n.y() << endl;
-////                cout << "updating" << endl;
-//                update();
-//            } else {
-//                roll=x;
-//                pitch=y;
-//                yaw=z;
-//            }
-//        }
-//    }
-    // Decrease angular speed (friction)
-//    angularSpeed *= 0.99;
-
-////     Stop rotation when speed goes below threshold
-//    if (angularSpeed < 0.01) {
-//        angularSpeed = 0.0;
-//    } else {
-//        // Update rotation
-//        rotation = QQuaternion::fromAxisAndAngle(rotationAxis, angularSpeed) * rotation;
-//        cout << angularSpeed << " " << rotationAxis.x() << " " << rotationAxis.y() << endl;
-
-//        // Request an update
-//        update();
-//    }
 }
 //! [1]
 

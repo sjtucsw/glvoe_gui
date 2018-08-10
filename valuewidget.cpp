@@ -1,3 +1,13 @@
+/****************************************************************************
+**
+** Copyright (C) 2018 The CUMAU INC.
+** Author: Siwei CAI
+** Date: 8.8.2018
+**
+** Valuewidget is used to painting the data on the GUI.
+**
+****************************************************************************/
+
 #include "valuewidget.h"
 #include <iostream>
 
@@ -6,8 +16,10 @@ using namespace std;
 ValueWidget::ValueWidget(QWidget *parent)
     : QFrame(parent)
 {
+    //Start timer
     timer.start(200, this);
 
+    //Open the file for data
     filein.open("C:\\Users\\yipai.du\\Documents\\Intelligent-Glove\\sensor_fusion\\output1.txt", ios::in);
 
     if (!filein.is_open()){
@@ -20,6 +32,8 @@ ValueWidget::ValueWidget(QWidget *parent)
 ValueWidget::~ValueWidget()
 {
 }
+
+//The override method of painting.
 
 void ValueWidget::paintEvent(QPaintEvent* event)
 {
@@ -49,6 +63,7 @@ void ValueWidget::paintEvent(QPaintEvent* event)
     painter.drawText(0, 40, width(), height(), Qt::AlignLeft | Qt::AlignTop, glo_hint);
 }
 
+// Time event that called.
 void ValueWidget::timerEvent(QTimerEvent *)
 {
     filein.clear();
@@ -64,6 +79,7 @@ void ValueWidget::timerEvent(QTimerEvent *)
         glo_state=QString::fromStdString(oneline);
         getline(filein, oneline);
         glo_hint=QString::fromStdString(oneline);
+        //update the painting.
         update();
     }
 //    std::cout << "ValueWidget!" << std::endl;

@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>bisine.jpg</file>
         <file>screw.jpg</file>
         <file>sample.txt</file>
         <file>cube.png</file>

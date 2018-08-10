@@ -47,6 +47,10 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
+/**
+  Header of Gromertyengine Class.
+**/
+
 
 #ifndef MAINWIDGET_H
 #define MAINWIDGET_H

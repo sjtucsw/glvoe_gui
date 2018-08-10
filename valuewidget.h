@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Copyright (C) 2018 The CUMAU INC.
+** Author: Siwei CAI
+** Date: 8.8.2018
+**
+** This is the header file of class ValueWidget, the widget class
+** used to display text infos of XDK.
+**
+**
+****************************************************************************/
+
 #ifndef VALUEWIDGET_H
 #define VALUEWIDGET_H
 

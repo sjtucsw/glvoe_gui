@@ -1,3 +1,14 @@
+/****************************************************************************
+**
+** Copyright (C) 2018 The CUMAU INC.
+** Author: Siwei CAI
+** Date: 8.8.2018
+**
+** Main of the GUI.
+**
+**
+****************************************************************************/
+
 #include "mainwindow.h"
 #include <QApplication>
 #include <qpushbutton.h>
@@ -19,23 +30,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-//    QPushButton quit( "Quit", 0 );
-//    quit.resize( 75, 30 );
-//    quit.setFont( QFont( "Times", 18, QFont::Bold ) );
-
-//    QObject::connect( &quit, SIGNAL(clicked()), &a, SLOT(quit()) );
-
-//    quit.show();
-
-//    ifstream filein;
-//    filein.open("d:/sample.txt", ios::in);
-
-//    if (!filein.is_open()){
-//        cout << "open File Failed." << endl;
-//    }
-//    string oneline;
-//    getline(filein, oneline);
-
     MainWindow mainWindow;
 
     mainWindow.show();
@@ -43,14 +37,6 @@ int main(int argc, char *argv[])
     QSurfaceFormat format;
     format.setDepthBufferSize(24);
     QSurfaceFormat::setDefaultFormat(format);
-
-//#ifndef QT_NO_OPENGL
-//    MainWidget widget;
-//    widget.show();
-//#else
-//    QLabel note("OpenGL Support required");
-//    note.show();
-//#endif
 
     return a.exec();
 }
