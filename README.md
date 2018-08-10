@@ -9,3 +9,4 @@ main.cpp
 mainwidget.cpp
 mainwindow.cpp
 geometryengine.cpp
+valuewidget.cpp
